@@ -1,50 +1,32 @@
 %-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
+% Resume in LateX
+% Author : Sourabh Bajaj
 % License : MIT
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
 
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
 \usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks, colorlinks]{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{xcolor}
 \input{glyphtounicode}
 
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{} % Clear all header and footer fields
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.7in}
-\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.7in}
+\addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
@@ -58,170 +40,174 @@
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that generate pdf is machine readable/ATS parsable
+% Ensure that generated PDF is machine readable/ATS parsable
 \pdfgentounicode=1
 
 %-------------------------
 % Custom commands
-\newcommand{\resumeItem}[1]{
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small #1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeItemPlain}[1]{
   \item\small{
     {#1 \vspace{-2pt}}
   }
 }
-\hypersetup{%
-  colorlinks=true,% hyperlinks will be coloured
-  linkcolor=blue,% hyperlink text will be green
-  linkbordercolor=blue,% hyperlink border will be red
-}
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
+\renewcommand{\labelitemii}{$\circ$}
 
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
-%----------HEADING----------
-
-\begin{center}
-    \textbf{\Huge \scshape Abir Pal} \\ \vspace{1pt}
-    \href{mailto:abir.pal899@gmail.com}{\underline{abir.pal899@gmail.com}} $|$ 
-    \href{https://twitter.com/imabptweets}{\underline{@imabptweets}} $|$ 
-    \href{https://linkedin.com/in/imabp}{\underline{linkedin.com/in/imabp}} $|$
-    \href{https://github.com/imabp}{\underline{Github @imabp}}
-    
-\end{center}
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email: \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+  \href{https://sourabhbajaj.com/}{sourabhbajaj.com} & Mobile: \href{tel:+11234567890}{+1-123-456-7890} \\
+\end{tabular*}
 
 
-%-----------EXPERIENCE-----------
-\section{Experience}
-  \resumeSubHeadingListStart
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-    \resumeSubheading
-      {Codiga}{Remote, USA}
-      {Software Engineer}{Feb 2022 -- July 2022}
-      \resumeItemListStart
-        \resumeItem{Reduced build times by 2x by writing deployment scripts and configuring lerna workspace in monorepo. }
-        \resumeItem{Decreased the build size by 3x, by building Component Library using Chakra UI, Rollup and Typescript. }
-        \resumeItem{Number of adoptions increased by 1.5x by advising to Developer Marketing Team.}
-        
-    
-      \resumeItemListEnd
-      \resumeSubheading
-      {Affinidi by Temasek}{Singapore}
-      {Software Engineering Intern}{August 2021 -- Present}
-      \resumeItemListStart
-        \resumeItem{Create and engineer developer adoption projects and generate 80\% adoptions on Affinidi APIs and SDKs. }
-        \resumeItem{Research on system design and develop the Affinidi Developer Portal to production, serving over 100,000 of developers.}
-        \resumeItem{Improve the existing coupled Authentication to decoupled Authentication for the internal PoCs and projects, which results in increased code re-usability and optimize bundle by removing 10,000 Lines of Code(LOC). }
-        
-    
-      \resumeItemListEnd
-    \resumeSubheading
-      {Major League Hacking}{Remote}
-      {Engineering Fellow}{January 2021 -- April 2021}
-      \resumeItemListStart
-        \resumeItem{Developed the CryptoDrive using Web3, Solidity and React, gained 100 of users in first release.}
-        \resumeItem{Researched on decentralized networks and developed a decentralized file storage service. }
-        \resumeItem{Awarded as Fellow from Major League Hacking(150 Fellows from 40,000) Received winning prize for CryptoDrive as a global winner.}
-       
-     \resumeItemListEnd
-
-
-  \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------
-\section{Projects}
-    
-     \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{\href{https://imabp.github.io/WebTerminal/}{Simulated Linux on browser.}}{[React, Data Structures]}}{December 2020}
-          \resumeItemListStart
-            \resumeItem{\textbf{Problem:} Quick no-setup simulated browser based Linux Shell, to make beginners aware in the university.}
-            \resumeItem{\textbf{Solution:}Used to empower 5000+ beginners to get started with Linux Commands, via Web Terminal, a simulated terminal on browser. Developed core file service system using Tree Data Structure}
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-  \resumeSubHeadingListStart
-      \resumeProjectHeading
-          {\textbf{\href{https://github.com/imabp/CertiGen}{\textbf{CertiGen(Mentored under Ronak Shakuja, SWE Microsoft)}}}{ [NodeJS, JIMP and Postman]}}{October 2020}
-          \resumeItemListStart
-            \resumeItem{\textbf{Problem:} Issuing Developer Event Certificates for Microsoft Student Ambassador's Community}
-            \resumeItem{\textbf{Solution:}A devtool for Microsoft Student Ambassadors, to generate certificates in seconds using Postman.  }
-            \resumeItem{Actively used by 1000+ Student Ambassadors, for their events and quick certificate generations. }
-          \resumeItemListEnd
-    \resumeSubHeadingListEnd
-
-
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages(Proficient)}{: Typescript, Javascript, Node.js} \\
-     \textbf{Frameworks(Proficient)}{: NextJS, PostgreSQL, TypeORM, React, Node.js, NestJS, AWS Cognito, AsyncAPI Specification  } \\
-     \textbf{Developer Tools(Proficient)}{: Terraform, AWS(Lambda, Cognito, SES, Route53, Elastic) , Docker, AsyncAPI, OpenAPI, Postman, Google Cloud(Deployment and Monitoring) } \\
-     \textbf{Languages(Familiar)}{: Terraform, Go, Python, Solidity, SQL, gRPC } \\
-     \textbf{Libraries}{: BabelJS, Kubernetes K9S, React-Router, TypeORM, Newman, Material UI, Tailwind  }
-    }}
- \end{itemize}
-
-\section{Awards and Volunteer Experience }
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-        \resumeItemListStart
-                \resumeItem{\textbf{\href{https://github.com/asyncapi/community/discussions/376\#discussioncomment-2890658}{AsyncAPI 2022 Mentee by Linux Foundation}}}
-                \resumeItem{\textbf{\href{https://dsailtconference.org/schedule/}{Guest Speaker at Carnegie Mellon University, UC Berkeley and Georgia Tech}}: Presented by first international talk on API Designs and how one can securely serve their machine learning models.}
-                \resumeItem{\textbf{\href{https://apihacks.co}{API Hacks Organizer} }: Organizer of API Hacks with support of Postman to help 2000+ developers to build developer tools, productivity tools using APIs and nurture open source culture among them.}
-                \resumeItem{\textbf{\href{https://devpost.com/software/cryptodrive}{Global Hackathon Winner at MLH Fellowship for CryptoDrive}}}
-                \resumeItem{\textbf{Other Auspicious Titles Awarded:} \href{https://www.youtube.com/watch?v=-P_IGKuYmeY}{Official Postman Conference Speaker(Featured on Postman Youtube)},  \href{https://twitter.com/SawoLabs/status/1418869910332055552}{Most Valuable Professional(MVP) at SAWO Labs}, \href{https://studentambassadors.microsoft.com/en-US/profile/49532}{Gold Microsoft Student Ambassador}(200 Golds Globally) .}
-      \resumeItemListEnd
-    }}
- \end{itemize}
- 
-%-----------EDUCATION-----------
+%-----------EDUCATION-----------------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {Chandigarh University}{Mohali, Punjab}
-      {Senior,B.E in Computer Science and Engineering}{August 2018 -- Expected July. 2022}
+      {Georgia Institute of Technology}{Atlanta, GA}
+      {Master of Science in Computer Science; GPA: 4.00}{Aug 2012 -- Dec 2013}
+    \resumeSubheading
+      {Birla Institute of Technology and Science}{Pilani, India}
+      {Bachelor of Engineering in Electrical and Electronics; GPA: 3.66 (9.15/10.0)}{Aug 2008 -- July 2012}
   \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Google}{Mountain View, CA}
+      {Software Engineer}{Oct 2016 -- Present}
+      \resumeItemListStart
+        \resumeItem{TensorFlow}
+          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
+        \resumeItem{Apache Beam}
+          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+      \resumeItemListEnd
+      
+% --------Multiple Positions Heading------------
+  %  \resumeSubSubheading
+  %   {Software Engineer I}{Oct 2014 -- Sep 2016}
+  %   \resumeItemListStart
+  %      \resumeItem{Apache Beam}
+  %        {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+  %   \resumeItemListEnd
+
+%-------------------------------------------
+
+    \resumeSubheading
+      {Coursera}{Mountain View, CA}
+      {Senior Software Engineer}{Jan 2014 -- Oct 2016}
+      \resumeItemListStart
+        \resumeItem{Notifications}
+          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing, etc.}
+        \resumeItem{Nostos}
+          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
+        \resumeItem{Workflows}
+          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusable patterns to expedite developer productivity.}
+        \resumeItem{Data Collection}
+          {Designed the internal survey and crowdsourcing platform which allowed for creating various tasks for crowdsourcing or embedding surveys across the Coursera platform.}
+        \resumeItem{Dev Environment}
+          {Analytics environment based on Docker and AWS, standardized the Python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
+        \resumeItem{Data Warehousing}
+          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
+        \resumeItem{Recommendations}
+          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
+        \resumeItem{Content Discovery}
+          {Improved content discovery by building a new onboarding experience on Coursera. Used this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
+        \resumeItem{Course Dashboards}
+          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Lucena Research}{Atlanta, GA}
+      {Data Scientist}{Summer 2012 and 2013}
+      \resumeItemListStart
+        \resumeItem{Portfolio Management}
+          {Created models for portfolio hedging, portfolio optimization and price forecasting. Also created a strategy backtesting engine used for simulating and backtesting strategies.}
+        \resumeItem{QuantDesk}
+          {Python backend for a web application used by hedge fund managers for portfolio management.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Georgia Institute of Technology}{Atlanta, GA}
+      {Research and Teaching Assistant}{Jan 2012 -- Dec 2013}
+      \resumeItemListStart
+        \resumeItem{Research Assistant -- Machine Learning}
+          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the Python library QSTK.}
+        \resumeItem{Teaching Assistant -- Computational Investing}
+          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignments, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{QuantSoftware Toolkit}
+      {Open source Python library for financial data analysis and machine learning for finance.}
+    \resumeSubItem{GitHub Visualization}
+      {Data visualization of Git log data using D3 to analyze project trends over time.}
+    \resumeSubItem{Recommendation System}
+      {Music and movie recommender systems using collaborative filtering on public datasets.}
+    \resumeSubItem{Mac Setup}
+      {Book that gives step-by-step instructions on setting up developer environment on macOS.}
+  \resumeSubHeadingListEnd
+
+%
+%--------SKILLS------------
+%\section{Skills}
+%  \resumeSubHeadingListStart
+%    \item{
+%      \textbf{Languages}{: Scala, Python, JavaScript, C++, SQL, Java}
+%      \hfill
+%      \textbf{Technologies}{: AWS, Play, React, Kafka, GCE}
+%    }
+%  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
 \end{document}

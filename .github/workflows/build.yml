@@ -27,6 +27,9 @@ jobs:
           cp *.pdf build/ 
           cp index.html build/
           
+      - name: Mark repository as safe
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+
       - name: Git add
         run: git add resume.pdf
       
